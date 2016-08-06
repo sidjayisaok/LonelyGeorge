@@ -23,6 +23,7 @@ router.get('/', function(req, res){
     "scores": []
   });
 });
+
 //our api is stored here
 app.use('/api', router);
 
@@ -34,6 +35,8 @@ app.use(bodyParser.text());
 
 //this delivers static pages in the public folder
 app.use(express.static('public'));
+//set up body-parser
+app.use(express.bodyParser());
 
 //this sends a response to the browser
 app.get('/public/home.html', function(req, res){
